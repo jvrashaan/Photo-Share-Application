@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Albums</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='photoshare.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,500,700|Oswald:300,400,700" rel="stylesheet">
+</head>
+<body>
+    <nav class="navigation">
+            <a href='/'>Home</a>
+            <a href='/profile'>My Profile</a>
+            <a href='/malbum'>Create Album</a>
+            <a href='/ualbum'>Update Album</a>
+            <a href='/dalbum'>Delete Album</a>
+            <a href='/dphoto'>Delete Photos</a>
+            <a href='/logout'>Logout</a>
+    </nav>
+    <br />
+    <section class="mess">
+        {% if message %}
+            <h4>{{ message }}</h4>
+        {% endif %}
+        <br />
+        {% if albums %}
+            <h1 class="title">My Albums</h1>
+            <br />
+            <ul>
+                {% for album in albums %}
+                    <li>{{album[0], album[1], album[2]}}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% if albums is none %}
+            <h1 class="title">No Albums</h1>
+        {% endif %}
+    </section>
+    <section class="footer">
+            <div id="logo">
+                <h1>Photoshare</h1>
+            </div>
+        </section>
+</body>
+</html>

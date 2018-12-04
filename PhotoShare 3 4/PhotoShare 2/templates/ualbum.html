@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update an Album</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='photoshare.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,500,700|Oswald:300,400,700" rel="stylesheet">
+</head>
+<body>
+    <nav class="navigation">
+            <a href='/'>Home</a>
+            <a href='/profile'>My Profile</a>
+            <a href='/malbum'>Create Album</a>
+            <a href='/ualbum'>Update Album</a>
+            <a href='/dalbum'>Delete Album</a>
+            <a href='/dphotos'>Delete Photos</a>
+            <a href='/logout'>Logout</a>
+    </nav>
+    <section class="message">
+        <div class="title">
+            <h2>Update an Album</h2>
+        </div>
+        <div id="cont">
+            <form method="POST" action="/ualbum">
+                <label for="album">Album Name:</label>
+                <input type="text" name="album" required='true' /><br />
+                <input type="submit" value="Continue" class="button btn btn-alt"/>
+            </form>
+        </div>
+    </section>
+    <section class="footer">
+        <div id="logo">
+            <h1>Photoshare</h1>
+        </div>
+    </section>
+</body>
+</html>

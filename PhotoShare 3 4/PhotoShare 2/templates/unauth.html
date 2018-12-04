@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Unauthorized</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='photoshare.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,500,700|Oswald:300,400,700" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="navigation">
+            <a href='/'>Home</a>
+        </nav>
+        <section class="mess">
+            <section class="title">
+                <h1>to acess these features of the site.</h1>
+            </section>
+            <br />
+            <a href='/login' method='GET' class="btn btn-alt">Login</a> or
+            <a href='/register' method='GET' class="btn btn-alt">Register</a>
+        </section>
+        <section class="footer">
+            <div id="logo">
+                <h1>Welcome to Photoshare</h1>
+            </div>
+        </section>
+    </body>
+</html>

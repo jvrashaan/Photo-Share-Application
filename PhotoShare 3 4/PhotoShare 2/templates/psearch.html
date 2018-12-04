@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Photos</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='photoshare.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,500,700|Oswald:300,400,700" rel="stylesheet">
+</head>
+<body>
+    <section class="header">
+            <h1>Photoshare</h1>
+    </section>
+    <section class="message">
+        <br />
+        {% if message %}
+            <h4>{{message}}!</h4>
+        {% endif %}
+        <br />
+        {% if name %}
+            <h1>Hello {{ name }}!</h1>
+        {% else %}
+            <a href='/login' class="btn btn-alt">Login</a>
+            <a href='/register' class="btn btn-alt">Register</a>
+        {% endif %}
+    </section>
+    <br />
+    <nav class="navigation">
+        <a href='/'>Home</a>
+        <a href='/profile'>Profile</a>
+        <a href='/psearch'>Photos</a>
+        <a href='/fsearch'>Friend Search/Recomendations</a>
+        <a href='/tsearch' method="GET">PhotoShare Tag Search</a>
+        <a href='/comments'>Comment Search</a>
+        <a href='/logout'>Logout</a>
+    </nav>
+    <br />
+    <section class="mess">
+        {% if photos %}
+            <section class="generaltags">
+                <h2>All User Photos</h2>
+                <br />
+                <ul>
+                    {% for photo in photos %}
+                        <li>{{photo[2]}}</li>
+                    {% endfor %}
+                </ul>
+            </section>
+        {% endif %}
+    </section>
+    <br />
+    <section class="footer">
+        <div id="logo">
+            <h1>Welcome to Photoshare</h1>
+        </div>
+    </section>
+</body>
+</html>

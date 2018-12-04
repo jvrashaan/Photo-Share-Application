@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+    <title>Create an account!</title>
+    <link rel="stylesheet" type="text/css" href="../static/photoshare.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,500,700|Oswald:300,400,700" rel="stylesheet">
+</head>
+<body>
+        <section class="message">
+            {%if not supress%}
+            <h1> Email already in use! Use another one or <a href="/login.html" class="btn btn-alt">login</a></h1>
+            {% endif %}
+        </section>
+        <nav class="navigation">
+            <a href='/'>Home</a>
+        </nav>
+        <section class="message">
+            <div class="title">
+                <h1>Enter your information below</h1>
+            </div>
+            <div id="cont">
+                <form method="POST" action="{{ url_for('register_user') }}">
+                    <label for="email">Enter your email:</label>
+                    <input type="email" name="email" required='true'/><br />
+                    <label for="password">Enter password:</label>
+                    <input type="password" name="password" required='true'/><br />
+                    <label for="lastname">Last Name:</label>
+                    <input type="text" name="lastname" required='true'/><br />
+                    <label for="firstname">First Name:</label>
+                    <input type="text" name="firstname" required='true'/><br />
+                    <label for="hometown">Hometown:</label>
+                    <input type="text" name="hometown" required='true'/><br />
+                    <label for="gender">Gender:</label>
+                    <input type="text" name="gender" required='true'/><br />
+                    <label for="dob">DOB:</label>
+                    <input type="text" name="dob" required="true"/><br />
+                    <div class="button">
+                        <input type="submit" class="btn btn-alt"/>
+                    </div>
+                </form>
+             </div>
+        </section>
+        <section class="footer">
+            <div id="logo">
+                <h1>Welcome to Photoshare</h1>
+            </div>
+        </section>
+</body>
+

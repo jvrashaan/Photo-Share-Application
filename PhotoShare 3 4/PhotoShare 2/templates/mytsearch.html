@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Tag Search</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='photoshare.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,500,700|Oswald:300,400,700" rel="stylesheet">
+</head>
+<body>
+    <nav class="navigation">
+            <a href='/'>Home</a>
+            <a href='/profile'>Profile</a>
+            <a href='/friends'>My Friends</a>
+            <a href='/fsearch'>Friend Search/Recomendations</a>
+            <a href='/mytsearch'>My Tag Search</a>
+            <a href='/logout'>Logout</a>
+    </nav>
+    <br />
+    <section class="mess">
+        {% if photos %}
+        <h1 class="title">Search Results</h1>
+        <br />
+        <ul>
+            {% for photo in photos %}
+                <li>{{ photo }}</li>
+            {% endfor %}
+        </ul>
+        <br />
+        {% elif name %}
+            {% if tags %}
+                <h1 class="title">My Tags</h1>
+                <br />
+                <ul>
+                    {% for tag in tags %}
+                        <li>{{tag[2]}}</li>
+                    {% endfor %}
+                    </ul>
+            <br />
+            {% endif %}
+        {% endif %}
+    </section>
+    <br />
+    <section class="message">
+            <div class="title">
+            <h1>Add a Tag</h1>
+            </div>
+            <div id="cont">
+                <form method="POST" action="/addTag">
+                    <label for="pid">Picture ID</label>
+                    <input type="int" name="pid" required="true" /><br />
+                    <label for="tag">Tag:</label>
+                    <input type="text" name="tag" required="true" /><br />
+                    <input type="submit" value="Submit" class="button btn btn-alt"/>
+                </form>
+            </div>
+    </section>
+    <section class="message">
+        <div class="title">
+            <h1>Search for Tags</h1>
+        </div>
+        <div id="cont">
+            <form method="POST" action="/mytsearch">
+                <label for="text">Tag:</label>
+                <input type="text" name="tag" required='true' /><br />
+                <input type="submit" value="Submit" class="button btn btn-alt"/>
+            </form>
+        </div>
+    </section>
+    <section class="footer">
+        <div id="logo">
+            <h1>Photoshare</h1>
+        </div>
+    </section>
+</body>
+</html>

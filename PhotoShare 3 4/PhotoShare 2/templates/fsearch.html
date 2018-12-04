@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='photoshare.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,500,700|Oswald:300,400,700" rel="stylesheet">
+</head>
+<body>
+    <nav class="navigation">
+            <a href='/'>Home</a>
+            <a href='/profile'>My Profile</a>
+            <a href='/friends'>My Friends</a>
+            <a href='/fsearch' method="GET">Friend Search/Recomendations</a>
+            <a href='/mytsearch' method="GET">My Tag Search</a>
+            <a href='/logout'>Logout</a>
+    </nav>
+    <br />
+    <section class="mess">
+        {% if name %}
+            {% if search %}
+                <h1 class="title">Friend Search</h1>
+                <br />
+                <ul>
+                    {% for s in search %}
+                        <li>{{s[0], s[1], s[2], s[3], s[4]}}</li>
+                    {% endfor %}
+                </ul>
+                <br />
+            {% endif  %}
+            {% if recommends %}
+                <h1 class="title">Friend Recommendations</h1>
+                <br />
+                <ul>
+                    {% for recommend in recomends %}
+                        <li>{{recommend[2]}}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endif %}
+    </section>
+    <br />
+    <section class="mess">
+        {% if friend %}
+            <h1 class="title">Registered Users</h1>
+            <br />
+            <ul>
+                {% for i in friend %}
+                    <li>{{i[1]}}, {{i[2]}}, {{ i[3] }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </section>
+    <br />
+    <section class="message">
+        <div class="title">
+            <h1>Search for Friends</h1>
+        </div>
+        <div id="cont">
+            <form method="POST" action="/fsearch">
+                <label for="email">User Email:</label>
+                <input type="text" name="email" required='true' /><br />
+                <input type="submit" value="Submit" class="button btn btn-alt"/>
+            </form>
+        </div>
+    </section>
+    <section class="footer">
+        <div id="logo">
+            <h1>Photoshare</h1>
+        </div>
+    </section>
+</body>
+</html>

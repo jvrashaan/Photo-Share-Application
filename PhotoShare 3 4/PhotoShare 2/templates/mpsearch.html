@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View All Photos</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='photoshare.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,500,700|Oswald:300,400,700" rel="stylesheet">
+</head>
+<body>
+     <nav class="navigation">
+        <a href='/'>Home</a>
+        <a href='/profile'>Profile</a>
+        <a href='/albums' method="GET">My Albums</a>
+        <a href='/mpsearch'>View All Photos</a>
+         <a href='/friends' method="GET">My Friends</a>
+        <a href='/fsearch'>Friend Search/Recomendations</a>
+        <a href='/mtsearch'>Tag Search</a>
+        <a href='/comments'>Comment Search</a>
+        <a href='/logout'>Logout</a>
+    </nav>
+    <br />
+    <section class="mess">
+        {% if name %}
+            <section class="generalcontent">
+                {% if likes %}
+                    <h2>You May Also Like</h2>
+                    <br />
+                    <ul>
+                        {% for like in likes %}
+                            <li>{{like[2]}}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </section>
+        {% endif %}
+    </section>
+        <br />
+        <section class="mess">
+            {% if photos %}
+                <section class="generaltags">
+                    <h2>All User Photos</h2>
+                    <br />
+                    <ul>
+                        {% for photo in photos %}
+                            <li>{{photo[2]}}</li>
+                            <form method="post" action="/likePhoto">
+                              <input type="text" name="photoId" value="{{photo[0][1]}}" hidden="true">
+                              <input type="submit" value="Like"> 
+                          </form>
+                        {% endfor %}
+                    </ul>
+                </section>
+            {% endif %}
+        </section>
+        <br />
+        <section class="footer">
+            <div id="logo">
+                <h1>Welcome to Photoshare</h1>
+            </div>
+        </section>
+
+</body>
+</html>

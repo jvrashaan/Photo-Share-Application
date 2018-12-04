@@ -1,0 +1,215 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  color: #CECECE;
+  font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+strong {
+  font-weight: 400;
+}
+cite, em {
+  font-style: italic;
+}
+
+/*end reset*/
+
+/*navigation*/
+
+.navigation{
+    text-align: center;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+}
+
+.navigation a {
+    color: #648880;
+    text-decoration: none;
+    margin:10px;
+
+}
+
+a:hover {
+  color: #a9b2b9;
+}
+
+/*header*/
+.header {
+    border-top: 4px solid #648880;
+    text-align: center;
+    font-size: 48px;
+    font-weight: 100;
+    letter-spacing: .5px;
+    overflow: hidden;
+    text-transform: uppercase;
+    height: 40px;
+}
+
+.header h1{
+    margin-top: 10px;
+    color: #648880;
+}
+
+h2, h3, h4{
+    color: #648880;
+}
+
+/*message*/
+.message{
+    text-align: center;
+    font-size: 16px;
+    font-weight: 200;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+}
+
+.messagel{
+    margin-top: 10px;
+}
+
+/*Home page*/
+
+.message a{
+    color: #648880;
+}
+
+.message a:hover {
+  color: #a9b2b9;
+}
+
+/*homepage*/
+.generalcontent h2{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 100;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    margin-top: 40px;
+}
+
+.generaltags h2{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 100;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+/*buttons*/
+
+.btn {
+    border-radius: 5px;
+    display: inline-block;
+    margin: 0;
+    text-align: center;
+
+}
+
+.btn-alt {
+    border: 1px solid #dfe2e5;
+    padding: 10px 30px;
+    color: #648880;
+    background: white;
+}
+
+
+/*profile*/
+.photos{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 100;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.title{
+    text-align: center;
+    font-size: 35px;
+    font-weight: 200;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    margin-top: 40px;
+}
+
+#content{
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+#cont{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.button{
+    margin-top: 10px;
+}
+
+/*footer for all pages*/
+.footer{
+    height: 500px;
+    background-color: #648880;
+}
+
+#logo {
+    text-align: center;
+    padding-top: 200px;
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 100;
+}
+
+/*friend search page*/
+.mess{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.mess ul{
+    margin-top: 20px;
+}

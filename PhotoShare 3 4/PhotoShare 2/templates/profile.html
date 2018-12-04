@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Profile</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='photoshare.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,500,700|Oswald:300,400,700" rel="stylesheet">
+</head>
+<body>
+    <nav class="navigation">
+        <a href='/'>Home</a>
+        <a href='/profile'>My Profile</a>
+        <a href='/albums' method="GET">My Albums</a>
+        <a href='/mpsearch'>View All Photos</a>
+        <a href='/friends' method="GET">My Friends</a>
+        <a href='/fsearch' method="GET">Friend Search/Recomendations</a>
+        <a href='/mytsearch'>My Tag Search</a>
+        <a href='/logout'>Logout</a>
+    </nav>
+    <section class="message">
+        {% if name %}
+            <h1>Hello {{ name }}!</h1>
+        {% endif %}
+    </section>
+    <section class="photos">
+        {% if photos %}
+            <h2>Here's your photos</h2>
+            <ul>
+                {% for photo in photos %}
+                    <li>{{photo[2]}}<br>
+                    <img src='data:image/png;base64, {{photo[0]}}'/></li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </section>
+    <section class="footer">
+        <div id="logo">
+            <h1>Photoshare</h1>
+        </div>
+    </section>
+</body>
+</html>
