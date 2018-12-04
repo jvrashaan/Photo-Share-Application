@@ -1,0 +1,1 @@
+Photo Share social media application. Users can log in and maintain a profile where they can upload photos and make friends. They can also browse photos from other users and like or comment on them. Users can also add friends and add tags to photos. Top users and most liked photos are highlighted on all users home pages, even site visitors. 
